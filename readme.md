@@ -64,14 +64,12 @@ class SomePresenter extends Nette\Application\UI\Presenter
 	/**
 	 * Create items paginator
 	 *
-	 * @param VisualPaginator\IControl $factory
-	 *
 	 * @return VisualPaginator\Control
 	 */
-	protected function createComponentVisualPaginator(VisualPaginator\IControl $factory)
+	protected function createComponentVisualPaginator()
 	{
 		// Init visual paginator
-		$control = $factory->create();
+		$control = new VisualPaginator\Control;
 
 		return $control;
 	}
@@ -90,14 +88,12 @@ class SomePresenter extends Nette\Application\UI\Presenter
 	/**
 	 * Create items paginator
 	 *
-	 * @param VisualPaginator\IControl $factory
-	 *
 	 * @return VisualPaginator\Control
 	 */
-	protected function createComponentVisualPaginator(VisualPaginator\IControl $factory)
+	protected function createComponentVisualPaginator()
 	{
 		// Init visual paginator
-		$control = $factory->create();
+		$control = new VisualPaginator\Control;
 
 		// Enable ajax (by default)
 		$control->enableAjax();
@@ -145,14 +141,12 @@ class SomePresenter extends Nette\Application\UI\Presenter
 	/**
 	 * Create items paginator
 	 *
-	 * @param VisualPaginator\IControl $factory
-	 *
 	 * @return VisualPaginator\Control
 	 */
-	protected function createComponentVisualPaginator(VisualPaginator\IControl $factory)
+	protected function createComponentVisualPaginator()
 	{
 		// Init visual paginator
-		$control = $factory->create();
+		$control = new VisualPaginator\Control;
 
 		// To use bootstrap default template
 		$control->setTemplate('bootstrap.latte');
