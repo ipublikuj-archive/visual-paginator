@@ -1,0 +1,47 @@
+{
+	"name"			: "ipub/visual-paginator",
+	"type"			: "library",
+	"description"	: "Visual paginator for Nette Framework",
+	"keywords"		: ["nette", "ipub", "ipublikuj", "tools", "paginator", "paging"],
+	"homepage"		: "https://github.com/iPublikuj/visual-paginator.git",
+	"license"		: ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+
+	"authors"		: [
+		{
+			"name"		: "Adam Kadlec",
+			"homepage"	: "http://www.ipublikuj.eu/"
+		},
+		{
+			"name":		"David Grudl",
+			"email":	"david@grudl.com"
+		}
+	],
+
+	"support": {
+		"email"		:"support@ipublikuj.eu",
+		"issues"	:"https://github.com/iPublikuj/visual-paginator/issues"
+	},
+
+	"require": {
+		"php"				: ">=5.4.0",
+		"nette/application"	: "~2.2",
+		"nette/di"			: "~2.2",
+		"nette/utils"		: "~2.2",
+		"latte/latte"		: "~2.2"
+	},
+
+	"require-dev": {
+		"nette/bootstrap"	: "~2.2",
+		"nette/mail"		: "~2.2",
+		"nette/safe-stream"	: "~2.2",
+		"nette/tester"		: "@dev",
+		"tracy/tracy"		: "@dev",
+		"janmarek/mockista"	: "@dev"
+	},
+
+	"autoload": {
+		"psr-0": {
+			"IPub\\VisualPaginator\\": "src/"
+		}
+	}
+}
