@@ -149,10 +149,10 @@ class SomePresenter extends Nette\Application\UI\Presenter
 		$control = new VisualPaginator\Control;
 
 		// To use bootstrap default template
-		$control->setTemplate('bootstrap.latte');
+		$control->setTemplateFile('bootstrap.latte');
 
 		// To use your own template
-		$control->setTemplate('path/to/your/latte/file.latte');
+		$control->setTemplateFile('path/to/your/latte/file.latte');
 
 		return $control;
 	}

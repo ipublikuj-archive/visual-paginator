@@ -120,10 +120,15 @@ class ComponentTest extends Tester\TestCase
 
 class TestPresenter extends UI\Presenter
 {
+	/**
+	 * Use component trait
+	 */
+	use VisualPaginator\TVisualPaginator;
+
 	public function actionValidTemplate()
 	{
 		// Set invalid template name
-		$this['visualPaginator']->setTemplate('bootstrap.latte');
+		$this['visualPaginator']->setTemplateFile('bootstrap.latte');
 
 		// Get visual paginator components
 		$visualPaginator = $this['visualPaginator'];
@@ -138,7 +143,7 @@ class TestPresenter extends UI\Presenter
 	public function actionInvalidTemplate()
 	{
 		// Set invalid template name
-		$this['visualPaginator']->setTemplate('invalid.latte');
+		$this['visualPaginator']->setTemplateFile('invalid.latte');
 	}
 
 	public function renderValidTemplate()

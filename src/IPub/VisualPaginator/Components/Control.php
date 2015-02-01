@@ -134,7 +134,7 @@ class Control extends Application\UI\Control
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function setTemplate($templatePath)
+	public function setTemplateFile($templatePath)
 	{
 		// Check if template file exists...
 		if (!is_file($templatePath)) {
