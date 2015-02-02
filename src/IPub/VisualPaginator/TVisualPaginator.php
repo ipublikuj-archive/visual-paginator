@@ -30,7 +30,7 @@ trait TVisualPaginator
 	/**
 	 * @param Components\IControl $visualPaginatorFactory
 	 */
-	public function injectAssetsLoader(Components\IControl $visualPaginatorFactory) {
+	public function injectVisualPaginator(Components\IControl $visualPaginatorFactory) {
 		$this->visualPaginatorFactory = $visualPaginatorFactory;
 	}
 }
