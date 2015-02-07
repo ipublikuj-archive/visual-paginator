@@ -70,7 +70,7 @@ class Control extends Application\UI\Control
 	/**
 	 * @param Localization\ITranslator $translator
 	 */
-	public function injectTranslator(Localization\ITranslator $translator)
+	public function injectTranslator(Localization\ITranslator $translator = NULL)
 	{
 		$this->translator = $translator;
 	}
