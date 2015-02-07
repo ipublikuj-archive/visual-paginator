@@ -20,15 +20,29 @@ use Nette\PhpGenerator as Code;
 
 class VisualPaginatorExtension extends DI\CompilerExtension
 {
+	/**
+	 * @var array
+	 */
+	protected $defaults = [
+		'templateFile'	=> NULL
+	];
+
 	public function loadConfiguration()
 	{
+		$config = $this->getConfig($this->defaults);
 		$builder = $this->getContainerBuilder();
 
 		// Define components
-		$builder->addDefinition($this->prefix('paginator'))
+		$paginator = $builder->addDefinition($this->prefix('paginator'))
 			->setClass('IPub\VisualPaginator\Components\Control')
 			->setImplement('IPub\VisualPaginator\Components\IControl')
+			->setArguments([new Nette\PhpGenerator\PhpLiteral('$templateFile')])
+			->setInject(TRUE)
 			->addTag('cms.components');
+
+		if ($config['templateFile']) {
+			$paginator->addSetup('$service->setTemplateFile(?)', [$config['templateFile']]);
+		}
 	}
 
 	/**
