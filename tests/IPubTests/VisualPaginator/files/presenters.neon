@@ -8,5 +8,4 @@ services:
 	presenters.test:
 		class: IPubTests\VisualPaginator\TestPresenter
 
-	router:
-		class: IPubTests\VisualPaginator\RouterFactory::createRouter
+	router: IPubTests\VisualPaginator\RouterFactory::createRouter
