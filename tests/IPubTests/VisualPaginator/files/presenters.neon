@@ -8,4 +8,5 @@ services:
 	presenters.test:
 		class: IPubTests\VisualPaginator\TestPresenter
 
-	application.router: Nette\Application\Routers\SimpleRouter('Test:default')
+	router:
+		class: IPubTests\VisualPaginator\RouterFactory::createRouter

@@ -17,6 +17,7 @@ namespace IPubTests\VisualPaginator;
 
 use Nette;
 use Nette\Application;
+use Nette\Application\Routers;
 use Nette\Application\UI;
 use Nette\Utils;
 
@@ -163,6 +164,20 @@ class TestPresenter extends UI\Presenter
 		$control = new VisualPaginator\Components\Control;
 
 		return $control;
+	}
+}
+
+class RouterFactory
+{
+	/**
+	 * @return \Nette\Application\IRouter
+	 */
+	public static function createRouter()
+	{
+		$router = new Routers\  RouteList();
+		$router[] = new Routers\Route('<presenter>/<action>[/<id>]', 'Homepage:default');
+
+		return $router;
 	}
 }
 
