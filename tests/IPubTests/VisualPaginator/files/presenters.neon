@@ -7,3 +7,5 @@ services:
 	# Test presenter
  	presenters.test:
  		class: IPubTests\VisualPaginator\TestPresenter
+		
+	application.router: Nette\Application\Routers\SimpleRouter('Test:default')
