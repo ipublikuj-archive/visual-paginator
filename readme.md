@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/ipub/visual-paginator.svg?style=flat-square)](https://packagist.org/packages/ipub/visual-paginator)
 [![Composer Downloads](https://img.shields.io/packagist/dt/ipub/visual-paginator.svg?style=flat-square)](https://packagist.org/packages/ipub/visual-paginator)
 
-Simple visual paginator for [Nette Framework](http://nette.org/)
+Visual paginator for [Nette Framework](http://nette.org/)
 
 ## Installation
 

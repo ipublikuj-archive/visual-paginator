@@ -3,12 +3,13 @@
 	"type"			: "library",
 	"description"	: "Visual paginator for Nette Framework",
 	"keywords"		: ["nette", "ipub", "ipublikuj", "tools", "paginator", "paging"],
-	"homepage"		: "https://github.com/iPublikuj/visual-paginator.git",
+	"homepage"		: "https://github.com/iPublikuj/visual-paginator",
 	"license"		: ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 
-	"authors"		: [
+	"authors": [
 		{
-			"name"		: "Adam Kadlec",
+			"name"		: "iPublikuj:cms",
+			"email"		: "info@ipublikuj.eu",
 			"homepage"	: "http://www.ipublikuj.eu/"
 		},
 		{
