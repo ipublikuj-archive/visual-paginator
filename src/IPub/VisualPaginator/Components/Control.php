@@ -31,7 +31,7 @@ use IPub\VisualPaginator\Exceptions;
  *
  * @method onShowPage(Control $self, $page)
  *
- * @property-read Application\UI\ITemplate $template
+ * @property Application\UI\ITemplate $template
  */
 class Control extends Application\UI\Control
 {
@@ -55,7 +55,7 @@ class Control extends Application\UI\Control
 	/**
 	 * @var string
 	 */
-	protected $templatePath;
+	protected $templateFile;
 
 	/**
 	 * @var Localization\ITranslator
@@ -113,8 +113,8 @@ class Control extends Application\UI\Control
 			// If template was not defined before...
 			if ($this->template->getFile() === NULL) {
 				// ...try to get base component template file
-				$templatePath = !empty($this->templatePath) ? $this->templatePath : __DIR__ . DIRECTORY_SEPARATOR .'template'. DIRECTORY_SEPARATOR .'default.latte';
-				$this->template->setFile($templatePath);
+				$templateFile = !empty($this->templateFile) ? $this->templateFile : __DIR__ . DIRECTORY_SEPARATOR .'template'. DIRECTORY_SEPARATOR .'default.latte';
+				$this->template->setFile($templateFile);
 			}
 
 			// Render component template
@@ -161,27 +161,27 @@ class Control extends Application\UI\Control
 	/**
 	 * Change default control template path
 	 *
-	 * @param string $templatePath
+	 * @param string $templateFile
 	 *
 	 * @return $this
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function setTemplateFile($templatePath)
+	public function setTemplateFile($templateFile)
 	{
 		// Check if template file exists...
-		if (!is_file($templatePath)) {
+		if (!is_file($templateFile)) {
 			// ...check if extension template is used
-			if (is_file(__DIR__ . DIRECTORY_SEPARATOR .'template'. DIRECTORY_SEPARATOR . $templatePath)) {
-				$templatePath = __DIR__ . DIRECTORY_SEPARATOR .'template'. DIRECTORY_SEPARATOR . $templatePath;
+			if (is_file(__DIR__ . DIRECTORY_SEPARATOR .'template'. DIRECTORY_SEPARATOR . $templateFile)) {
+				$templateFile = __DIR__ . DIRECTORY_SEPARATOR .'template'. DIRECTORY_SEPARATOR . $templateFile;
 
 			} else {
 				// ...if not throw exception
-				throw new Exceptions\FileNotFoundException('Template file "'. $templatePath .'" was not found.');
+				throw new Exceptions\FileNotFoundException('Template file "'. $templateFile .'" was not found.');
 			}
 		}
 
-		$this->templatePath = $templatePath;
+		$this->templateFile = $templateFile;
 
 		return $this;
 	}
