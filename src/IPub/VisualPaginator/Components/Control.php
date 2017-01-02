@@ -1,6 +1,6 @@
 <?php
 /**
- * Control.php
+ * Component.php
  *
  * @copyright	More in license.md
  * @license		http://www.ipublikuj.eu

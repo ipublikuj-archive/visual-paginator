@@ -34,7 +34,7 @@ extensions:
 
 ## Usage
 
-### Implementing into Presenter or Control
+### Implementing into Presenter or Component
 
 ```php
 use IPub\VisualPaginator\Components as VisualPaginator;
@@ -65,12 +65,12 @@ class SomePresenter extends Nette\Application\UI\Presenter
 	/**
 	 * Create items paginator
 	 *
-	 * @return VisualPaginator\Control
+	 * @return VisualPaginator\Component
 	 */
 	protected function createComponentVisualPaginator()
 	{
 		// Init visual paginator
-		$control = new VisualPaginator\Control;
+		$control = new VisualPaginator\Component;
 
 		return $control;
 	}
@@ -89,12 +89,12 @@ class SomePresenter extends Nette\Application\UI\Presenter
 	/**
 	 * Create items paginator
 	 *
-	 * @return VisualPaginator\Control
+	 * @return VisualPaginator\Component
 	 */
 	protected function createComponentVisualPaginator()
 	{
 		// Init visual paginator
-		$control = new VisualPaginator\Control;
+		$control = new VisualPaginator\Component;
 
 		// Enable ajax (by default)
 		$control->enableAjax();
@@ -142,12 +142,12 @@ class SomePresenter extends Nette\Application\UI\Presenter
 	/**
 	 * Create items paginator
 	 *
-	 * @return VisualPaginator\Control
+	 * @return VisualPaginator\Component
 	 */
 	protected function createComponentVisualPaginator()
 	{
 		// Init visual paginator
-		$control = new VisualPaginator\Control;
+		$control = new VisualPaginator\Component;
 
 		// To use bootstrap default template
 		$control->setTemplateFile('bootstrap.latte');
