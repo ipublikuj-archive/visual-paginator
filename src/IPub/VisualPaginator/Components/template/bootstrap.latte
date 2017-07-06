@@ -1,22 +1,22 @@
 {if $paginator->pageCount > 1}
 <ul class="pagination">
 	{if $paginator->isFirst()}
-	<li class="disabled"><a>« Previous</a></li>
+	<li class="disabled"><span>« Previous</span></li>
 	{else}
 	<li><a href="{link $handle, 'page' => $paginator->page - 1}" rel="prev" n:class="$useAjax ? ajax">« Previous</a></li>
 	{/if}
 
 	{foreach $steps as $step}
 	{if $step == $paginator->page}
-	<li class="active"><a href="#">{$step}</a></li>
+	<li class="active"><span>{$step}</span></li>
 	{else}
 	<li><a href="{link $handle, 'page' => $step}" n:class="$useAjax ? ajax">{$step}</a></li>
 	{/if}
-	{if $iterator->nextValue > $step + 1}<li class="disabled"><a>…</a></li>{/if}
+	{if $iterator->nextValue > $step + 1}<li class="disabled"><span>…</span></li>{/if}
 	{/foreach}
 
 	{if $paginator->isLast()}
-	<li class="disabled"><a>Next »</a></li>
+	<li class="disabled"><span>Next »</span></li>
 	{else}
 	<li><a href="{link $handle, 'page' => $paginator->page + 1}" rel="next" n:class="$useAjax ? ajax">Next »</a></li>
 	{/if}

@@ -8,22 +8,22 @@
 <div class="pagination">
 	<ul>
 		{if $paginator->isFirst()}
-		<li><a>«</a></li>
+		<li><span>«</span></li>
 		{else}
 		<li><a href="{link $handle, 'page' => $paginator->page - 1}" n:class="$useAjax ? ajax">«</a></li>
 		{/if}
 
 		{foreach $steps as $step}
 		{if $step == $paginator->page}
-			<li class="active"><a>{$step}</a></li>
+			<li class="active"><span>{$step}</span></li>
 		{else}
 			<li><a href="{link $handle, 'page' => $step}" n:class="$useAjax ? ajax">{$step}</a></li>
 		{/if}
-		{if $iterator->nextValue > $step + 1}<li class="disabled"><a>…</a></li>{/if}
+		{if $iterator->nextValue > $step + 1}<li class="disabled"><span>…</span></li>{/if}
 		{/foreach}
 
 		{if $paginator->isLast()}
-		<li><a>»</a></li>
+		<li><span>»</span></li>
 		{else}
 		<li><a href="{link $handle, 'page' => $paginator->page + 1}" n:class="$useAjax ? ajax">»</a></li>
 		{/if}
