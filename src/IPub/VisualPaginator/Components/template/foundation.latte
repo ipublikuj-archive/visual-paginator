@@ -8,23 +8,23 @@
 <div class="pagination-centered">
 	<ul class="pagination">
 		{if $paginator->isFirst()}
-		<li class="arrow unavailable"><a href="">&laquo;</a></li>
+		<li class="arrow unavailable"><span>&laquo;</span></li>
 		{else}
 		<li><a href="{link $handle, 'page' => $paginator->page - 1}" n:class="$useAjax ? ajax,arrow">&laquo;</a></li>
 		{/if}
 
 		{foreach $steps as $step}
 		{if $step == $paginator->page}
-			<li class="current"><a>{$step}</a></li>
+			<li class="current"><span>{$step}</span></li>
 		{else}
 			<li><a href="{link $handle, 'page' => $step}" n:class="$useAjax ? ajax">{$step}</a></li>
 		{/if}
-		{if $iterator->nextValue > $step + 1}<li class="unavailable"><a href="">&hellip;</a></li>{/if}
+		{if $iterator->nextValue > $step + 1}<li class="unavailable"><span>&hellip;</span></li>{/if}
 		{/foreach}
 
 		{if $paginator->isLast()}
 
-		<li class="arrow unavailable"><a href="">&raquo;</a></li>
+		<li class="arrow unavailable"><span>&raquo;</span></li>
 		{else}
 		<li><a href="{link $handle, 'page' => $paginator->page + 1}" n:class="$useAjax ? ajax,arrow">&raquo;</a></li>
 		{/if}
