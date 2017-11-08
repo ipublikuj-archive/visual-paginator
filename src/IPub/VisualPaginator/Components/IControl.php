@@ -17,7 +17,7 @@ namespace IPub\VisualPaginator\Components;
 interface IControl
 {
 	/**
-	 * @param null $templateFile
+	 * @param string|NULL $templateFile
 	 * @return mixed
 	 */
 	public function create($templateFile = NULL);
