@@ -56,6 +56,11 @@ class Control extends Application\UI\Control
 	 * @var string
 	 */
 	protected $templateFile;
+        
+        /**
+         * @var int 
+         */
+        protected $displayRelatedPages;
 
 	/**
 	 * @var Localization\ITranslator
@@ -82,6 +87,7 @@ class Control extends Application\UI\Control
 	 */
 	public function __construct(
 		$templateFile = NULL,
+                $displayRelatedPages = NULL,
 		Nette\ComponentModel\IContainer $parent = NULL, $name = NULL
 	) {
 		// TODO: remove, only for tests
@@ -90,6 +96,7 @@ class Control extends Application\UI\Control
 		if ($templateFile) {
 			$this->setTemplateFile($templateFile);
 		}
+                $this->displayRelatedPages = (int)$displayRelatedPages;
 	}
 
 	/**
@@ -225,7 +232,8 @@ class Control extends Application\UI\Control
 			$steps = [$page];
 
 		} else {
-			$arr = range(max($paginator->firstPage, $page - 3), min($paginator->lastPage, $page + 3));
+                        $relatedPages = $this->displayRelatedPages ?: 3;
+			$arr = range(max($paginator->firstPage, $page - $relatedPages), min($paginator->lastPage, $page + $relatedPages));
 			$count = 4;
 			$quotient = ($paginator->pageCount - 1) / $count;
 
