@@ -90,9 +90,6 @@ class Control extends Application\UI\Control
                 $displayRelatedPages = NULL,
 		Nette\ComponentModel\IContainer $parent = NULL, $name = NULL
 	) {
-		// TODO: remove, only for tests
-		parent::__construct(NULL, NULL);
-
 		if ($templateFile) {
 			$this->setTemplateFile($templateFile);
 		}
@@ -256,7 +253,7 @@ class Control extends Application\UI\Control
 	 *
 	 * @return void
 	 */
-	public function loadState(array $params)
+	public function loadState(array $params): void
 	{
 		parent::loadState($params);
 

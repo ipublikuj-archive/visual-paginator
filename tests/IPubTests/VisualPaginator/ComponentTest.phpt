@@ -113,7 +113,7 @@ class ComponentTest extends Tester\TestCase
 
 		VisualPaginator\DI\VisualPaginatorExtension::register($config);
 
-		$config->addConfig(__DIR__ . '/files/presenters.neon', $config::NONE);
+		$config->addConfig(__DIR__ . '/files/presenters.neon');
 
 		return $config->createContainer();
 	}

@@ -1,50 +1,53 @@
 {
-	"name"			: "ipub/visual-paginator",
-	"type"			: "library",
-	"description"	: "Visual paginator for Nette Framework",
-	"keywords"		: ["nette", "ipub", "ipublikuj", "tools", "paginator", "paging"],
-	"homepage"		: "https://github.com/iPublikuj/visual-paginator",
-	"license"		: ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
-
-	"authors": [
-		{
-			"name"		: "iPublikuj:cms",
-			"email"		: "info@ipublikuj.eu",
-			"homepage"	: "http://www.ipublikuj.eu/"
-		},
-		{
-			"name":		"David Grudl",
-			"email":	"david@grudl.com"
-		}
-	],
-
-	"support": {
-		"email"		:"support@ipublikuj.eu",
-		"issues"	:"https://github.com/iPublikuj/visual-paginator/issues"
-	},
-
-	"require": {
-		"php"				: ">=5.4.0",
-		"nette/application"	: "~2.2",
-		"nette/di"			: "~2.2",
-		"nette/utils"		: "~2.2",
-		"latte/latte"		: "~2.2"
-	},
-
-	"require-dev": {
-		"nette/bootstrap"	: "~2.2",
-		"nette/forms"		: "~2.2",
-		"nette/mail"		: "~2.2",
-		"nette/robot-loader"	: "~2.2",
-		"nette/safe-stream"	: "~2.2",
-		"nette/tester"		: "@dev",
-		"tracy/tracy"		: "@dev",
-		"janmarek/mockista"	: "@dev"
-	},
-
-	"autoload": {
-		"psr-0": {
-			"IPub\\VisualPaginator\\": "src/"
-		}
-	}
+  "name": "ipub/visual-paginator",
+  "type": "library",
+  "description": "Visual paginator for Nette Framework",
+  "keywords": [
+    "nette",
+    "ipub",
+    "ipublikuj",
+    "tools",
+    "paginator",
+    "paging"
+  ],
+  "homepage": "https://github.com/iPublikuj/visual-paginator",
+  "license": [
+    "BSD-3-Clause",
+    "GPL-2.0",
+    "GPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "iPublikuj:cms",
+      "email": "info@ipublikuj.eu",
+      "homepage": "http://www.ipublikuj.eu/"
+    },
+    {
+      "name": "David Grudl",
+      "email": "david@grudl.com"
+    }
+  ],
+  "support": {
+    "email": "support@ipublikuj.eu",
+    "issues": "https://github.com/iPublikuj/visual-paginator/issues"
+  },
+  "require": {
+    "php": "^7.2",
+    "nette/application": "^3.0-RC2",
+    "nette/di": "^3.0-RC3",
+    "nette/utils": "^3.0",
+    "latte/latte": "^2.5"
+  },
+  "require-dev": {
+    "nette/bootstrap": "^3.0",
+    "nette/forms": "^3.0",
+    "nette/tester": "^2.2",
+    "tracy/tracy": "^2.6",
+    "janmarek/mockista": "^1.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "IPub\\VisualPaginator\\": "src/"
+    }
+  }
 }
