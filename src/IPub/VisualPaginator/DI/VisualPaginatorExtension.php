@@ -16,7 +16,6 @@ namespace IPub\VisualPaginator\DI;
 
 use Nette;
 use Nette\DI;
-use Nette\PhpGenerator as Code;
 
 class VisualPaginatorExtension extends DI\CompilerExtension
 {
