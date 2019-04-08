@@ -1,7 +1,6 @@
-nette:
-	application:
-		mapping:
-			*: IPubTests\VisualPaginator\*Presenter
+application:
+    mapping:
+        *: IPubTests\VisualPaginator\*Presenter
 
 services:
 	# Test presenter

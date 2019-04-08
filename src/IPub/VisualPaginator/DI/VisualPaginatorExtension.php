@@ -16,7 +16,6 @@ namespace IPub\VisualPaginator\DI;
 
 use Nette;
 use Nette\DI;
-use Nette\PhpGenerator as Code;
 
 class VisualPaginatorExtension extends DI\CompilerExtension
 {
@@ -29,16 +28,17 @@ class VisualPaginatorExtension extends DI\CompilerExtension
 
 	public function loadConfiguration()
 	{
-		$config = $this->getConfig($this->defaults);
+		$config = DI\Config\Helpers::merge($this->getConfig(), $this->defaults);
 		$builder = $this->getContainerBuilder();
 
 		// Define components
-		$paginator = $builder->addDefinition($this->prefix('paginator'))
-			->setClass('IPub\VisualPaginator\Components\Control')
+		$paginator = $builder->addFactoryDefinition($this->prefix('paginator'))
 			->setImplement('IPub\VisualPaginator\Components\IControl')
+			->addTag('cms.components')
+			->getResultDefinition()
+			->setType('IPub\VisualPaginator\Components\Control')
 			->setArguments([new Nette\PhpGenerator\PhpLiteral('$templateFile')])
-			->setInject(TRUE)
-			->addTag('cms.components');
+			->addTag(DI\Extensions\InjectExtension::TAG_INJECT);
 
 		if ($config['templateFile']) {
 			$paginator->addSetup('$service->setTemplateFile(?)', [$config['templateFile']]);
